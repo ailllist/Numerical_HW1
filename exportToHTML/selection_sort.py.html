@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>selection_sort.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+selection_sort.py</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">import </span><span class="s1">numpy </span><span class="s0">as </span><span class="s1">np  </span><span class="s2"># numpy 배열을 사용</span>
+<a name="l2"><span class="ln">2    </span></a>
+<a name="l3"><span class="ln">3    </span></a>
+<a name="l4"><span class="ln">4    </span></a><span class="s0">def </span><span class="s1">selection_sort(arr1d: np.ndarray) -&gt; np.ndarray:  </span><span class="s2"># 함수 선언</span>
+<a name="l5"><span class="ln">5    </span></a>    <span class="s0">if </span><span class="s1">len(arr1d.shape) &gt;= </span><span class="s3">2</span><span class="s1">:  </span><span class="s2"># 이차원 배열 이상인 경우</span>
+<a name="l6"><span class="ln">6    </span></a>        <span class="s1">print(</span><span class="s4">&quot;정렬 불가&quot;</span><span class="s1">)  </span><span class="s2"># 정렬 불가 출력후</span>
+<a name="l7"><span class="ln">7    </span></a>        <span class="s1">exit()  </span><span class="s2"># 코드 종료</span>
+<a name="l8"><span class="ln">8    </span></a>    
+<a name="l9"><span class="ln">9    </span></a>    <span class="s0">if </span><span class="s1">isinstance(arr1d[</span><span class="s3">0</span><span class="s1">]</span><span class="s0">, </span><span class="s1">np.int32) </span><span class="s0">or </span><span class="s1">isinstance(arr1d[</span><span class="s3">0</span><span class="s1">]</span><span class="s0">, </span><span class="s1">np.int64) </span><span class="s0">or </span><span class="s1">isinstance(arr1d[</span><span class="s3">0</span><span class="s1">]</span><span class="s0">, </span><span class="s1">np.float64):</span>
+<a name="l10"><span class="ln">10   </span></a>        <span class="s0">pass  </span><span class="s2"># arr1d[0]이 int나 float인 경우는 넘기고</span>
+<a name="l11"><span class="ln">11   </span></a>    <span class="s0">else</span><span class="s1">:  </span><span class="s2"># 그 외인 경우는</span>
+<a name="l12"><span class="ln">12   </span></a>        <span class="s1">print(</span><span class="s4">&quot;정렬 불가&quot;</span><span class="s1">)  </span><span class="s2"># 정렬 불가 출력후</span>
+<a name="l13"><span class="ln">13   </span></a>        <span class="s1">exit()  </span><span class="s2"># 코드 종료</span>
+<a name="l14"><span class="ln">14   </span></a>    
+<a name="l15"><span class="ln">15   </span></a>    <span class="s0">for </span><span class="s1">i </span><span class="s0">in </span><span class="s1">range(len(arr1d)):  </span><span class="s2"># arr1d순회, index 0부터 시작</span>
+<a name="l16"><span class="ln">16   </span></a>        <span class="s1">minimum_index = i  </span><span class="s2"># 최소 값인 index를 찾는다.</span>
+<a name="l17"><span class="ln">17   </span></a>        <span class="s0">for </span><span class="s1">j </span><span class="s0">in </span><span class="s1">range(i + </span><span class="s3">1</span><span class="s0">, </span><span class="s1">len(arr1d)):  </span><span class="s2"># 최소 값 이후 부터 탐색 진행</span>
+<a name="l18"><span class="ln">18   </span></a>            <span class="s0">if </span><span class="s1">arr1d[j] &lt; arr1d[minimum_index]:  </span><span class="s2"># 최소 값보다 더 작은 값을 찾으면</span>
+<a name="l19"><span class="ln">19   </span></a>                <span class="s1">minimum_index = j  </span><span class="s2"># 최소값 index 갱신</span>
+<a name="l20"><span class="ln">20   </span></a>        <span class="s1">arr1d[i]</span><span class="s0">, </span><span class="s1">arr1d[minimum_index] = arr1d[minimum_index]</span><span class="s0">, </span><span class="s1">arr1d[i]  </span><span class="s2"># 가장 작은 값과 i번째 요소를 바꿈</span>
+<a name="l21"><span class="ln">21   </span></a>    
+<a name="l22"><span class="ln">22   </span></a>    <span class="s0">return </span><span class="s1">arr1d</span>
+<a name="l23"><span class="ln">23   </span></a>
+<a name="l24"><span class="ln">24   </span></a>
+<a name="l25"><span class="ln">25   </span></a><span class="s1">arr_1 = np.random.rand(</span><span class="s3">5000</span><span class="s1">) * </span><span class="s3">100  </span><span class="s2"># 5000개의 무작위 배열 생성</span>
+<a name="l26"><span class="ln">26   </span></a><span class="s1">selection_sort(arr_1)  </span><span class="s2"># 함수 진행</span>
+<a name="l27"><span class="ln">27   </span></a></pre>
+</body>
+</html>
