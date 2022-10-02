@@ -1,0 +1,8 @@
+Algorithm Selection Sort (A):
+for i  1 to len(A)-1 do
+minimum_index = i
+for j  i+1 to len(A) do
+if A[j] < A[minimum_index]:
+minimum_idex = j
+A[i] = A[minimum_index]
+A[minimum_index] = A[i]
