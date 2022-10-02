@@ -1,0 +1,16 @@
+timeit
+
+(base) linux-pc@linuxpc-750XDA:~/바탕화면/develop/Numerical_HW1$ python3 -m timeit -n 100000 -r 1 "import insertion_sort"
+100000 loops, best of 1: 13.1 usec per loop
+(base) linux-pc@linuxpc-750XDA:~/바탕화면/develop/Numerical_HW1$ python3 -m timeit -n 100000 -r 1 "import selection_sort"
+100000 loops, best of 1: 15.8 usec per loop
+(base) linux-pc@linuxpc-750XDA:~/바탕화면/develop/Numerical_HW1$ python3 -m timeit -n 100000 -r 1 "import selection_sort"
+100000 loops, best of 1: 15.8 usec per loop
+(base) linux-pc@linuxpc-750XDA:~/바탕화면/develop/Numerical_HW1$ python3 -m timeit -n 100000 -r 1 "import insertion_sort"
+100000 loops, best of 1: 12.7 usec per loop
+(base) linux-pc@linuxpc-750XDA:~/바탕화면/develop/Numerical_HW1$ python3 -m timeit -n 100000 -r 1 "import selection_sort"
+100000 loops, best of 1: 16 usec per loop
+(base) linux-pc@linuxpc-750XDA:~/바탕화면/develop/Numerical_HW1$ python3 -m timeit -n 100000 -r 1 "import insertion_sort"
+100000 loops, best of 1: 13.2 usec per loop
+
+
